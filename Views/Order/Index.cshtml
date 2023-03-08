@@ -1,0 +1,36 @@
+﻿@model IList<LABA333.Models.Order>
+@{
+
+}
+<h1>Сотрудники</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Клиент</td>
+            <td>Пост</td>
+            <td>Склад</td>
+            <td>Сотрудник</td>
+            <td>Заказ</td>
+             <td>Номер заказа</td>
+             <td>Дата доставки</td>
+            <td>Адрес</td>
+            <td></td>
+        </tr>
+    </thead>
+    <thead>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.id_client</td>
+                <td>@order.id_post</td>
+                <td>@order.id_warehouse</td>
+                <td>@order.EmployeeId</td>
+                <td>@order.id_product</td>   
+                <td>@order.number_contract</td>
+                <td>@order.date_of_execution</td>
+                <td>@order.address</td>
+                <td><a href="~/Home/Buy/@order.id_order">Открыть</a></td>
+            </tr>
+        }
+    </thead>
+</table>
