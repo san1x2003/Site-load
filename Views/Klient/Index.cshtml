@@ -1,0 +1,30 @@
+﻿@model IList<LABA333.Models.Employee>
+@{   
+
+}
+ 
+
+    <h1>Клиенты</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Почта</td>
+            <td>Номер телефона</td>
+            <td>Адрес</td>
+            <td></td>
+        </tr>
+    </thead>
+    <thead>
+        @foreach (var Klient in Model)
+            {
+            <tr>
+                <td>@Klient.Id_klient</td>
+                <td>@Klient.email</td>
+                <td>@Klient.phone_number</td>
+                <td>@Klient.adress</td>
+                <td><a href="~/Home/Buy/@Klient.Id">Открыть</a></td>
+            </tr>
+        }
+    </thead>
+    </table>
