@@ -11,31 +11,31 @@ using LABA333.Models;
 
 namespace LABA333.Controllers
 {
-    public class klientController : Controller
+    public class KlientController : Controller
     {
         [HttpPut]
-        public Klient Create(Klient Klient)
+        public Klient Create(Klient klient)
         {
-            Storage.KlientStorage.Create(Klient);
-            return Storage.OrderStorage.Read(Klient.Id_klient);
+            Storage.KlientStorage.Create(klient);
+            return Storage.KlientStorage.Read(klient.Id_klient);
         }
 
         [HttpGet]
-        public Order Read(int id_order)
+        public Klient Read(int klientId)
         {
-            return Storage.OrderStorage.Read(id_order);
+            return Storage.KlientStorage.Read(klientId);
         }
 
         [HttpPatch]
-        public Order Update(int id_order, Order newOrder)
+        public Klient Update(int klientId, Klient newklient)
         {
-            return Storage.OrderStorage.Update(id_order, newOrder);
+            return Storage.KlientStorage.Update(klientId, newklient);
         }
 
         [HttpDelete]
-        public bool Delete(int id_order)
+        public bool Delete(int klientId)
         {
-            return Storage.EmployeeStorage.Delete(id_order);
+            return Storage.KlientStorage.Delete(klientId);
         }
 
         [HttpGet("Enter")]

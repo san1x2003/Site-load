@@ -6,37 +6,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using LABA333.Models;
 using LABA333.Repository;
-
+using LABA333.Models;
 
 namespace LABA333.Controllers
 {
-    public class EmployeeController : Controller
+    public class SkladController : Controller
     {
         [HttpPut]
-        public Employee Create(Employee employee)
+        public Sklad Create(Sklad sklad)
         {
-            Storage.EmployeeStorage.Create(employee);
-            return Storage.EmployeeStorage.Read(employee.Id);
+            Storage.SkladStorage.Create(sklad);
+            return Storage.SkladStorage.Read(sklad.Id_sklad);
         }
 
         [HttpGet]
-        public Employee Read(int employeeId)
+        public Sklad Read(int skladId)
         {
-            return Storage.EmployeeStorage.Read(employeeId);
+            return Storage.SkladStorage.Read(skladId);
         }
 
         [HttpPatch]
-        public Employee Update(int employeeId, Employee newemployee)
+        public Sklad Update(int skladId, Sklad newsklad)
         {
-            return Storage.EmployeeStorage.Update(employeeId, newemployee);
+            return Storage.SkladStorage.Update(skladId, newsklad);
         }
 
         [HttpDelete]
-        public bool Delete(int employeeId)
+        public bool Delete(int skladId)
         {
-            return Storage.EmployeeStorage.Delete(employeeId);
+            return Storage.SkladStorage.Delete(skladId);
         }
 
         [HttpGet("Enter")]

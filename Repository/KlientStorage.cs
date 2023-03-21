@@ -16,20 +16,20 @@ namespace LABA333.Repository
             Klients.Add(Klient.Id_klient, Klient);
         }
 
-        public Klient Read(int Id)
+        public Klient Read(int Id_klient)
         {
-            return Klients[Id];
+            return Klients[Id_klient];
         }
 
-        public Klient Update(int Id, Klient newKlient)
+        public Klient Update(int Id_klient, Klient newKlient)
         {
-            Klients[Id] = newKlient;
-            return Klients[Id];
+            Klients[Id_klient] = newKlient;
+            return Klients[Id_klient];
         }
 
-        public bool Delete(int Id)
+        public bool Delete(int Id_klient)
         {
-            return Klients.Remove(Id);
+            return Klients.Remove(Id_klient);
         }
     }
 }

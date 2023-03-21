@@ -12,31 +12,31 @@ using LABA333.Repository;
 
 namespace LABA333.Controllers
 {
-    public class EmployeeController : Controller
+    public class TovarController : Controller
     {
         [HttpPut]
-        public Employee Create(Employee employee)
+        public Tovar Create(Tovar tovar)
         {
-            Storage.EmployeeStorage.Create(employee);
-            return Storage.EmployeeStorage.Read(employee.Id);
+            Storage.TovarStorage.Create(tovar);
+            return Storage.TovarStorage.Read(tovar.Id_product);
         }
 
         [HttpGet]
-        public Employee Read(int employeeId)
+        public Tovar Read(int tovarId)
         {
-            return Storage.EmployeeStorage.Read(employeeId);
+            return Storage.TovarStorage.Read(tovarId);
         }
 
         [HttpPatch]
-        public Employee Update(int employeeId, Employee newemployee)
+        public Tovar Update(int tovarId, Tovar newtovar)
         {
-            return Storage.EmployeeStorage.Update(employeeId, newemployee);
+            return Storage.TovarStorage.Update(tovarId, newtovar);
         }
 
         [HttpDelete]
-        public bool Delete(int employeeId)
+        public bool Delete(int tovarId)
         {
-            return Storage.EmployeeStorage.Delete(employeeId);
+            return Storage.TovarStorage.Delete(tovarId);
         }
 
         [HttpGet("Enter")]
